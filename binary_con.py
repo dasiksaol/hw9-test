@@ -2,6 +2,7 @@ import math
 
 
 def binary_con(opt, value):
+    
     '''
     @param opt: 'bd' or 'db', binary to decimal or decimal to binary
     @param value: the value to be converted, integer
@@ -27,5 +28,5 @@ def binary_con(opt, value):
         return result
 
 
-# print(binary_con("bd", 10010001))
+print(binary_con("bd", 10010001))
 # print(binary_con("db", 145))
