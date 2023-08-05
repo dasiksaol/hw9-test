@@ -1,11 +1,19 @@
 from binary_con import binary_con
 from pyfiglet import *
-from art import *
+import time
 from termcolor import colored
+import os
+from colorama import Fore, Style
 # pip install pyfiglet
 # pip install termcolor
 # pip install art
 
+# Clear console screen
+# def clear_screen():
+#     os.system('cls')
+def clear_screen():
+    print("\033c", end="")
+    
 run = True
 manual = False
 loop = False
@@ -26,8 +34,8 @@ print(colored("""
 ╔══════════════════════════════════════════════════════════════╗ 
 ║      ʕ•ᴥ•ʔ  Welcome to the Aupp Binary Converter  ʕ•ᴥ•ʔ      ║
 ╚══════════════════════════════════════════════════════════════╝""",'red', attrs=['bold', 'underline'], on_color='on_yellow'))
-Tutorial = input("""Do you wish to read the tutorial? (y/n)
-                    Input Here >>> """)
+Tutorial = input("""           Do you wish to read the tutorial? (y/n)
+    Input Here >>> """)
 
 if Tutorial == "y":
     manual = True
@@ -70,6 +78,7 @@ page 2/2""", "yellow"))
     break
     
 while run:
+    clear_screen()
     print("\n")
     print("Input Operation")
     opt = input("༼ つ ╹ ╹ ༽つ ")
@@ -129,13 +138,24 @@ while run:
         print("Restart APP? (y/n)")
         next = input("༼ つ ╹ ╹ ༽つ ")
         if next == "y":
+            clear_screen()
             manual = False
             run = True
             break
         elif next == "n":
+            clear_screen()
             manual = False
-            thank = figlet_format("Thank You")
-            print(thank)
+        
+            bye = figlet_format("Thank You", font="isometric1")
+            y_axis = 0
+            direction = 1
+            for i in range(40):
+                clear_screen()
+                print('\n' * y_axis + Fore.YELLOW + bye + Style.RESET_ALL)
+                time.sleep(0.1)
+                y_axis += direction
+                if y_axis == 0 or y_axis == 10:
+                    direction *= -1
             break
         else: 
             print("Please type y or n")
