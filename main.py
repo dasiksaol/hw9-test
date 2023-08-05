@@ -2,15 +2,12 @@ from binary_con import binary_con
 from pyfiglet import *
 import time
 from termcolor import colored
-import os
-from colorama import Fore, Style
+from colorama import Fore
 # pip install pyfiglet
 # pip install termcolor
-# pip install art
+# pip install 
 
-# Clear console screen
-# def clear_screen():
-#     os.system('cls')
+## clear screen function (flipping page)
 def clear_screen():
     print("\033c", end="")
     
@@ -19,17 +16,16 @@ manual = False
 loop = False
 # font = [default, digital, isometric1]
 
-# ascii_banner = figlet_format("Binary Conversion", font = "digital")
+## Logo
 ascii_banner = figlet_format("Aupp")
 print(colored((ascii_banner), "red"))
 ascii_banner = figlet_format("Binary")
 print(colored((ascii_banner), "green"))
 ascii_banner = figlet_format("Conversion")
 print(colored((ascii_banner), "blue"))
-# print(FigletFont.getFonts())
+    # print(FigletFont.getFonts())
 
-# Art = text2art("101", font='block', chr_ignore=True) 
-# print(Art)
+## Intro (Input to continue)
 print(colored("""
 ╔══════════════════════════════════════════════════════════════╗ 
 ║      ʕ•ᴥ•ʔ  Welcome to the Aupp Binary Converter  ʕ•ᴥ•ʔ      ║
@@ -40,6 +36,8 @@ Tutorial = input("""          Do you wish to read the tutorial? (y/n)
 if Tutorial == "y":
     manual = True
 
+## if input "n" or anything else = no show manual 
+## user manual / Tutorial (input/enter to continue/flip page) + (clear screen of intro)
 while manual:
     clear_screen()
     ascii_banner = figlet_format("    User Manual")
@@ -84,13 +82,17 @@ page 2/2""", "yellow"))
 "red"))
     input()
     break
-    
+
+## converter 
+## clear screen after each conversion
+## input/enter to continue
+
 while run:
     clear_screen()
     converter = figlet_format("   Converter")
     print(colored((converter), "green"))
     print("\n")
-    print("Input Operation \n")
+    print(colored("Input Operation \n", "yellow", attrs= ["bold"]))
     opt = input("༼ つ ╹ ╹ ༽つ ")
     print("\n")
     if opt not in ["db", "bd"]:
@@ -112,7 +114,7 @@ while run:
         loop = False
     else:
         run = False
-        print("Input Number You Wish to convert \n")
+        print(colored("Input Number You Wish to convert \n", "yellow", attrs= ["bold"]))
         value = input("༼ つ ╹ ╹ ༽つ ")
         print("\n")
         try: 
@@ -164,7 +166,7 @@ while run:
             loop = True
 
     while loop:
-        print("Restart APP? (y/n) \n")
+        print(colored("Restart APP? (y/n) \n", "yellow", attrs= ["bold"]))
         next = input("༼ つ ╹ ╹ ༽つ ")
         if next == "y":
             clear_screen()
@@ -196,7 +198,7 @@ while run:
             for i in range(40):
                 clear_screen()
                 print('\n' * y_axis + Fore.GREEN + bye + penguin)
-                time.sleep(0.1)
+                time.sleep(0.09)
                 y_axis += direction
                 if y_axis == 0 or y_axis == 10:
                     direction *= -1
