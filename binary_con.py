@@ -24,11 +24,15 @@ def binary_con(opt, value):
         elif value in [0, 1]:
              return value
     elif opt == "bd":
-        result = 0
-        value = str(value)[::-1]
-        for index, x in enumerate(value):
-            result += ( (2**index) * int(x) )
-        return result
+        for x in str(value):
+            if x not in ["0", '1']:
+                return "Error: Invalid Number"
+        else:
+            result = 0
+            value = str(value)[::-1]
+            for index, x in enumerate(value):
+                result += ( (2**index) * int(x) )
+            return result
 
 
 # print(binary_con("bd", 10010001))

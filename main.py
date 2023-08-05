@@ -141,29 +141,48 @@ while run:
         else:
             result = binary_con(opt, int(value))
             print("\n")
-            print(colored("100101010101001010010101111111010100101010000010101001010110010101", "cyan"))
-            print(colored("100101010101001010010101000001010100101010000010101001010110010101", "cyan"))
+            if result == "Error: Invalid Number":
+                print(colored("100101010101001010010101111111010100101010000010101001010110010101", "red"))
+                print(colored("100101010101001010010101000001010100101010000010101001010110010101", "red"))
 
-            
-            ascii_banner = figlet_format(f"Opt = {str(opt)}")
-            print(colored((ascii_banner), "green"))
-            ascii_banner = figlet_format(f"Input = {str(value)}")
-            print(colored((ascii_banner), "green"))
-            ascii_banner = figlet_format(f"Result = {str(result)}")
-            print(colored((ascii_banner), "green"))
+                error = figlet_format("Error: Invalid Number")
+                print(colored(error, "red"))
 
-
-            print(colored("100101010101001010010101001101010100101010000010101001010110010101", "cyan"))
-            print(colored("100101010101001010010101000001010100101010000010101001010110010101", "cyan"))
-        
-            print(colored(""" 
+                print(colored("100101010101001010010101111111010100101010000010101001010110010101", "red"))
+                print(colored("100101010101001010010101000001010100101010000010101001010110010101", "red"))
+                print(colored(""" 
     ┬────────────────⇌••⇋────────────────┬
             Press Enter to Continue       
     ┴────────────────⇌••⇋────────────────┴
     """,
-    "red"))
-            input()
-            loop = True
+    "cyan"))
+                input()
+                run = True
+                loop = False
+            else: 
+                print(colored("100101010101001010010101111111010100101010000010101001010110010101", "cyan"))
+                print(colored("100101010101001010010101000001010100101010000010101001010110010101", "cyan"))
+
+                
+                ascii_banner = figlet_format(f"Opt = {str(opt)}")
+                print(colored((ascii_banner), "green"))
+                ascii_banner = figlet_format(f"Input = {str(value)}")
+                print(colored((ascii_banner), "green"))
+                ascii_banner = figlet_format(f"Result = {str(result)}")
+                print(colored((ascii_banner), "green"))
+
+
+                print(colored("100101010101001010010101001101010100101010000010101001010110010101", "cyan"))
+                print(colored("100101010101001010010101000001010100101010000010101001010110010101", "cyan"))
+            
+                print(colored(""" 
+        ┬────────────────⇌••⇋────────────────┬
+                Press Enter to Continue       
+        ┴────────────────⇌••⇋────────────────┴
+        """,
+        "red"))
+                input()
+                loop = True
 
     while loop:
         print(colored("Restart APP? (y/n) \n", "yellow", attrs= ["bold"]))
