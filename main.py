@@ -1,6 +1,6 @@
 from binary_con import binary_con
 from pyfiglet import *
-import time
+from time import *
 from termcolor import colored
 from colorama import Fore
 # pip install pyfiglet
@@ -27,7 +27,7 @@ print(colored((ascii_banner), "blue"))
 
 ## Intro (Input to continue)
 print(colored("""
-╔══════════════════════════════════════════════════════════════╗ 
+╔══════════════════════════════════════════════════════════════╗
 ║      ʕ•ᴥ•ʔ  Welcome to the Aupp Binary Converter  ʕ•ᴥ•ʔ      ║
 ╚══════════════════════════════════════════════════════════════╝""",'red', attrs=['bold', 'underline'], on_color='on_yellow'))
 Tutorial = input("""          Do you wish to read the tutorial? (y/n)
@@ -96,6 +96,13 @@ while run:
     opt = input("༼ つ ╹ ╹ ༽つ ")
     print("\n")
     if opt not in ["db", "bd"]:
+        print("Loading 0%", end="", flush=True)
+        sleep(0.3)
+        print("\rLoading██ 20%", end="", flush=True)
+        sleep(0.5)
+        print("\r Issue Found!")
+        print("\n")
+        
         print(colored("100101010101001010010101111111010100101010000010101001010110010101", "red"))
         print(colored("100101010101001010010101000001010100101010000010101001010110010101", "red"))
 
@@ -116,10 +123,21 @@ while run:
         run = False
         print(colored("Input Number You Wish to convert \n", "yellow", attrs= ["bold"]))
         value = input("༼ つ ╹ ╹ ༽つ ")
-        print("\n")
+        
         try: 
             int(value)
         except ValueError:
+            
+            print("\n")
+            print("Loading 0%", end="", flush=True)
+            sleep(0.3)
+            print("\rLoading██ 20%", end="", flush=True)
+            sleep(0.3)
+            print("\rLoading████ 60%", end="", flush=True)
+            sleep(0.5)
+            print("\r   Issue Found!")
+            print("\n")
+
             print(colored("100101010101001010010101111111010100101010000010101001010110010101", "red"))
             print(colored("100101010101001010010101000001010100101010000010101001010110010101", "red"))
 
@@ -140,8 +158,19 @@ while run:
 
         else:
             result = binary_con(opt, int(value))
-            print("\n")
+            
             if result == "Error: Invalid Number":
+
+                print("\n")
+                print("Loading 0%", end="", flush=True)
+                sleep(0.3)
+                print("\rLoading██ 20%", end="", flush=True)
+                sleep(0.3)
+                print("\rLoading████ 60%", end="", flush=True)
+                sleep(0.5)
+                print("\r   Issue Found!")
+                print("\n")
+
                 print(colored("100101010101001010010101111111010100101010000010101001010110010101", "red"))
                 print(colored("100101010101001010010101000001010100101010000010101001010110010101", "red"))
 
@@ -160,6 +189,18 @@ while run:
                 run = True
                 loop = False
             else: 
+                print("\n")
+                print("Loading 0%", end="", flush=True)
+                sleep(0.3)
+                print("\rLoading██ 20%", end="", flush=True)
+                sleep(0.3)
+                print("\rLoading████ 60%", end="", flush=True)
+                sleep(0.3)
+                print("\rLoading██████100%", end="", flush=True)
+                sleep(0.5)
+                print("\rLoading ᴄᴏᴍᴘʟᴇᴛᴇ!")
+
+                print("\n")
                 print(colored("100101010101001010010101111111010100101010000010101001010110010101", "cyan"))
                 print(colored("100101010101001010010101000001010100101010000010101001010110010101", "cyan"))
 
@@ -217,7 +258,7 @@ while run:
             for i in range(40):
                 clear_screen()
                 print('\n' * y_axis + Fore.GREEN + bye + penguin)
-                time.sleep(0.09)
+                sleep(0.09)
                 y_axis += direction
                 if y_axis == 0 or y_axis == 10:
                     direction *= -1
