@@ -34,14 +34,14 @@ print(colored("""
 ╔══════════════════════════════════════════════════════════════╗ 
 ║      ʕ•ᴥ•ʔ  Welcome to the Aupp Binary Converter  ʕ•ᴥ•ʔ      ║
 ╚══════════════════════════════════════════════════════════════╝""",'red', attrs=['bold', 'underline'], on_color='on_yellow'))
-Tutorial = input("""           Do you wish to read the tutorial? (y/n)
-    Input Here >>> """)
+Tutorial = input("""          Do you wish to read the tutorial? (y/n)
+          Input Here >>> """)
 
 if Tutorial == "y":
     manual = True
 
 while manual:
-    
+    clear_screen()
     ascii_banner = figlet_format("    User Manual")
     print(colored((ascii_banner), "green"))
     print(colored(""" 
@@ -55,8 +55,16 @@ while manual:
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
 page 1/2""", "yellow"))
-
+    print(colored(""" 
+┬────────────────⇌••⇋────────────────┬
+        Press Enter to Continue       
+┴────────────────⇌••⇋────────────────┴
+""",
+"red"))
     input()
+    clear_screen()
+    ascii_banner = figlet_format("    User Manual")
+    print(colored((ascii_banner), "green"))
     print(colored(""" 
 ╔══════════════════════════════════════════════════════════════╗ 
 ║                                                              ║
@@ -79,8 +87,10 @@ page 2/2""", "yellow"))
     
 while run:
     clear_screen()
+    converter = figlet_format("   Converter")
+    print(colored((converter), "green"))
     print("\n")
-    print("Input Operation")
+    print("Input Operation \n")
     opt = input("༼ つ ╹ ╹ ༽つ ")
     print("\n")
     if opt not in ["db", "bd"]:
@@ -92,9 +102,17 @@ while run:
 
         print(colored("100101010101001010010101111111010100101010000010101001010110010101", "red"))
         print(colored("100101010101001010010101000001010100101010000010101001010110010101", "red"))
+        print(colored(""" 
+┬────────────────⇌••⇋────────────────┬
+        Press Enter to Continue       
+┴────────────────⇌••⇋────────────────┴
+""",
+"cyan"))
+        input()
+        loop = False
     else:
         run = False
-        print("Input Number You Wish to convert")
+        print("Input Number You Wish to convert \n")
         value = input("༼ つ ╹ ╹ ༽つ ")
         print("\n")
         try: 
@@ -108,6 +126,15 @@ while run:
 
             print(colored("100101010101001010010101111111010100101010000010101001010110010101", "red"))
             print(colored("100101010101001010010101000001010100101010000010101001010110010101", "red"))
+            print(colored(""" 
+┬────────────────⇌••⇋────────────────┬
+        Press Enter to Continue       
+┴────────────────⇌••⇋────────────────┴
+""",
+"cyan"))
+            input()
+            run = True
+            loop = False
 
         else:
             result = binary_con(opt, int(value))
@@ -126,16 +153,18 @@ while run:
 
             print(colored("100101010101001010010101001101010100101010000010101001010110010101", "cyan"))
             print(colored("100101010101001010010101000001010100101010000010101001010110010101", "cyan"))
-        loop = True
-        print(colored(""" 
-┬────────────────⇌••⇋────────────────┬
-        Press Enter to Continue       
-┴────────────────⇌••⇋────────────────┴
-""",
-"red"))
-    input()
+        
+            print(colored(""" 
+    ┬────────────────⇌••⇋────────────────┬
+            Press Enter to Continue       
+    ┴────────────────⇌••⇋────────────────┴
+    """,
+    "red"))
+            input()
+            loop = True
+
     while loop:
-        print("Restart APP? (y/n)")
+        print("Restart APP? (y/n) \n")
         next = input("༼ つ ╹ ╹ ༽つ ")
         if next == "y":
             clear_screen()
@@ -146,12 +175,27 @@ while run:
             clear_screen()
             manual = False
         
-            bye = figlet_format("Thank You", font="isometric1")
+            bye = figlet_format("Thank You")
+            penguin = """
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣷⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡛⠇⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⣀⡜⡇
+⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⡿⠟⠛⣷⠇
+⠀⠀⠀⠀⣠⣶⣿⠿⠻⢿⣿⣿⣿⠷⢤⡀⠀⠀⢸⠉⠁⠰⡹⠀
+⠀⠀⠀⣼⣿⡟⠀⠀⠀⠀⠙⣿⠃⠀⠀⠱⡄⢀⡇⠀⠀⣦⠇⠀
+⠀⠀⢰⣿⣿⠀⠰⠾⠷⠠⣴⣟⣲⠔⠿⠓⢳⡼⠀⠀⢰⡸⠀⠀
+⠀⠀⣸⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣷⣶⡦⠃⠀⠀
+⠀⠀⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⡯⠀⠀⠀⠀
+⠀⠀⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠁⠀⠀⠀⠀
+⢠⣶⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡇⠀⠀⠀⠀⠀
+⠈⠿⣿⣿⣿⣿⣿⣄⣀⡀⠀⠀⠀⠀⠀⣀⣾⡛⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠉⠉⠛⠿⠥⢄⡬⠵⠐⠒⠂⠉⠋⠉⠁⠀⠀⠀⠀⠀⠀
+            """
             y_axis = 0
             direction = 1
             for i in range(40):
                 clear_screen()
-                print('\n' * y_axis + Fore.YELLOW + bye + Style.RESET_ALL)
+                print('\n' * y_axis + Fore.GREEN + bye + penguin)
                 time.sleep(0.1)
                 y_axis += direction
                 if y_axis == 0 or y_axis == 10:
